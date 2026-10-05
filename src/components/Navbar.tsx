@@ -17,19 +17,23 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-ink-900/5 bg-white/90 backdrop-blur">
       <div className="container-x flex h-16 items-center justify-between">
 
+        {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-3 font-bold text-lg text-ink-900"
+          className="flex items-center gap-3 text-lg font-bold text-ink-900"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white text-xs font-bold">
-            AMS
-          </span>
+            <img
+    src="/log.jpeg"
+  
+    className="h-14 w-auto max-w-[500px] object-contain"
+  />
 
-          <span>
+          <span className="hidden sm:inline">
             Aidme Medical Solutions
           </span>
         </a>
 
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-7 md:flex">
           {links.map((link) => (
             <a
@@ -42,16 +46,19 @@ export default function Navbar() {
           ))}
         </nav>
 
+        {/* Request Demo */}
         <div className="hidden md:block">
           <a href="#contact" className="btn-primary">
             Request a Demo
           </a>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen((value) => !value)}
           className="flex h-10 w-10 items-center justify-center rounded-md border border-ink-900/10 md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <span className="text-xl">
             {open ? "✕" : "☰"}
@@ -59,6 +66,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {open && (
         <div className="border-t border-ink-900/5 bg-white md:hidden">
           <div className="container-x flex flex-col gap-4 py-5">
