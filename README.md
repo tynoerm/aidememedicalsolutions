@@ -20,6 +20,10 @@ npm run dev
 
 Then open http://localhost:3000.
 
+For production, run `npm start` (`node server.js`). It builds the site automatically if
+no production build exists, then serves it. Configure it with `PORT` and `HOST`. A
+health check is available at `/healthz`.
+
 ## Structure
 
 - `src/app/layout.tsx` — root layout + metadata
